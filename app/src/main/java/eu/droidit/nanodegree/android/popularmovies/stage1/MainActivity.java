@@ -12,17 +12,18 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ProgressBar;
 
+import butterknife.BindView;
 import eu.droidit.nanodegree.android.popularmovies.stage1.adapter.ImageAdapter;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.API;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.APIType;
 
-import static eu.droidit.nanodegree.android.popularmovies.stage1.R.id.gridview;
-
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.gridview)
     GridView gridView;
     int lastSelectedItem = R.id.popular;
     ImageAdapter adapter;
+    @BindView(R.id.main_loading_indicator)
     ProgressBar progressBar;
 
     @Override
@@ -31,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         //read the key at startup
         API.readKey(this);
         setContentView(R.layout.activity_main);
-        gridView = (GridView) findViewById(gridview);
-        progressBar = (ProgressBar) findViewById(R.id.main_loading_indicator);
         setTitle(APIType.basedOnId(lastSelectedItem).getDescription().concat(" Movies"));
         adapter = new ImageAdapter(
                 this,

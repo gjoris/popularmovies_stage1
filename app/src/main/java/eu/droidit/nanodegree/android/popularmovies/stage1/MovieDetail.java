@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
+import butterknife.BindView;
 import eu.droidit.nanodegree.android.popularmovies.stage1.adapter.ImageAdapter;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.ImageType;
 import eu.droidit.nanodegree.android.popularmovies.stage1.storage.MovieStore;
@@ -22,12 +23,18 @@ import eu.droidit.nanodegree.android.popularmovies.stage1.storage.model.Movie;
 
 public class MovieDetail extends AppCompatActivity {
 
-    ImageView picture;
-    TextView plotSynopsis;
-    TextView title;
-    TextView voteAverage;
+    @BindView(R.id.picture)
+    private ImageView picture;
+    @BindView(R.id.synopsis)
+    private TextView plotSynopsis;
+    @BindView(R.id.title)
+    private TextView title;
+    @BindView(R.id.voteAverage)
+    private TextView voteAverage;
 
+    @BindView(R.id.detail_loading_indicator)
     private ProgressBar progressBar;
+    @BindView(R.id.releaseDate)
     private TextView releaseDate;
 
 
@@ -35,12 +42,6 @@ public class MovieDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
-        picture = (ImageView) findViewById(R.id.picture);
-        plotSynopsis = (TextView) findViewById(R.id.synopsis);
-        title = (TextView) findViewById(R.id.title);
-        voteAverage = (TextView) findViewById(R.id.voteAverage);
-        releaseDate = (TextView) findViewById(R.id.releaseDate);
-        progressBar = (ProgressBar) findViewById(R.id.detail_loading_indicator);
 
         final Movie movie = MovieStore.get(getIntent().getIntExtra(Intent.EXTRA_TEXT, 0));
 
