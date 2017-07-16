@@ -1,79 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    tools:context="eu.droidit.nanodegree.android.popularmovies.stage1.MovieDetail">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/picture"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/movie_poster"
-        app:srcCompat="@color/colorAccent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="3dp" />
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        tools:context="eu.droidit.nanodegree.android.popularmovies.stage1.MovieDetail">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/picture"
-        android:gravity="start"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/picture"
-        tools:layout_editor_absoluteX="8dp" />
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/movie_poster"
+            app:srcCompat="@color/colorAccent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="3dp" />
 
-    <TextView
-        android:id="@+id/synopsis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_marginTop="8dp"
-        android:gravity="start"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:layout_editor_absoluteX="8dp" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/picture"
+            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/picture"
+            tools:layout_editor_absoluteX="8dp" />
 
-    <TextView
-        android:id="@+id/voteAverage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/synopsis"
-        android:layout_marginTop="8dp"
-        android:gravity="start"
-        android:textAlignment="viewStart"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/synopsis"
-        tools:layout_editor_absoluteX="8dp" />
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:layout_editor_absoluteX="8dp" />
 
-    <TextView
-        android:id="@+id/releaseDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/voteAverage"
-        android:layout_marginTop="8dp"
-        android:gravity="start"
-        android:textAlignment="viewStart"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/voteAverage"
-        tools:layout_editor_absoluteX="8dp" />
+        <TextView
+            android:id="@+id/voteAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/synopsis"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/synopsis"
+            tools:layout_editor_absoluteX="8dp" />
 
-    <ProgressBar
-        android:id="@+id/detail_loading_indicator"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:visibility="invisible" />
+        <TextView
+            android:id="@+id/releaseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/voteAverage"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/voteAverage"
+            tools:layout_editor_absoluteX="8dp" />
 
-</RelativeLayout>
+        <ProgressBar
+            android:id="@+id/detail_loading_indicator"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</ScrollView>
