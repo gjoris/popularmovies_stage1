@@ -16,6 +16,7 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import eu.droidit.nanodegree.android.popularmovies.stage1.adapter.ImageAdapter;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.ImageType;
 import eu.droidit.nanodegree.android.popularmovies.stage1.storage.MovieStore;
@@ -24,25 +25,25 @@ import eu.droidit.nanodegree.android.popularmovies.stage1.storage.model.Movie;
 public class MovieDetail extends AppCompatActivity {
 
     @BindView(R.id.picture)
-    private ImageView picture;
+    ImageView picture;
     @BindView(R.id.synopsis)
-    private TextView plotSynopsis;
+    TextView plotSynopsis;
     @BindView(R.id.title)
-    private TextView title;
+    TextView title;
     @BindView(R.id.voteAverage)
-    private TextView voteAverage;
+    TextView voteAverage;
 
     @BindView(R.id.detail_loading_indicator)
-    private ProgressBar progressBar;
+    ProgressBar progressBar;
     @BindView(R.id.releaseDate)
-    private TextView releaseDate;
+    TextView releaseDate;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
-
+        ButterKnife.bind(this);
         final Movie movie = MovieStore.get(getIntent().getIntExtra(Intent.EXTRA_TEXT, 0));
 
         //We only want to set the title, the rest has to be set when we are done loading (offers better user experience imho)

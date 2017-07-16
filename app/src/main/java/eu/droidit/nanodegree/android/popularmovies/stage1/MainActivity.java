@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import eu.droidit.nanodegree.android.popularmovies.stage1.adapter.ImageAdapter;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.API;
 import eu.droidit.nanodegree.android.popularmovies.stage1.settings.APIType;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //read the key at startup
         API.readKey(this);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         setTitle(APIType.basedOnId(lastSelectedItem).getDescription().concat(" Movies"));
         adapter = new ImageAdapter(
                 this,
